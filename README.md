@@ -11,8 +11,8 @@ JAIFO is an open-source, locally-run interface for using small-scale Large Langu
 - Ability to create, edit, and delete prompts as presets for easy reuse
 - Ability to create, edit, and delete writing styles for reuse
 ### Use Cases
-- Quickly generate a follow-up email by copying the original into the input prompt text area, selecting a preset prompt ("Write follow-up email"), choosing an LLM model (default: Llama3.1), and clicking "Write Now"
-- Improve a text by typing a few ideas and selecting the "Improve the text" preset, then clicking "Write Now" to get a corrected version
+- Quickly generate a follow-up email by copying the original into the input prompt text area, selecting a preset prompt ("Follow up email"), choosing an LLM model (default: Llama3.1), and clicking "Write Now"
+- Improve a text by typing a few ideas and selecting the "Writing" preset, then clicking "Write Now" to get a corrected version
 
 ## Installation
 ### Requirements
