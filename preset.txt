@@ -1,0 +1,8 @@
+{
+    "Translate2VNmese": "Please translate into Vietnamese the text after _INPUT_ section. Use Markdown for text format.",
+    "Translate2English": "Please translate into English the text after _INPUT_ section. Use Markdown for text format.",
+    "New email": "You will use the information in _INPUT_ section to write a new email. Use Markdown for text format.",
+    "Reply email": "Use the items in the next paragraph to write a reply email. Refer to the email chain starting with 'From:' for context. Use Markdown formatting.\n",
+    "Follow up email": "Draft a response to the attached email, ensuring all points are covered. Use Markdown for text format.",
+    "Improve text": "Improve the text after _INPUT_ keyword by correct its grammar and structure. Use Markdown for text format."
+}
