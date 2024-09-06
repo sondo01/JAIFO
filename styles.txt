@@ -1,3 +1,3 @@
 {
-    "Default style": "Write with standard,neutral Australian tone."
+    "Default style": "Write with standard, neutral Australian tone."
 }
