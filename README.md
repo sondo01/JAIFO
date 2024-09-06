@@ -2,17 +2,17 @@
 Just another Interface for Ollama
 
 ## Overview:
-Simple tasks such as writing emails, translation, or generating documents (like this one) do not require commercial Large Language Models (LLMs) like ChatGPT or Gemini. Small and Open Source LLMs, such as Llama3.1:7B or Gemma2:2B, can be run locally with Ollama to achieve the same results while maintaining user privacy. However, there is currently no simple User Interface (UI) for running Ollama, prompting the creation of this script.
+Simple tasks such as writing emails, translation, or generating documents (like this one) do not require commercial Large Language Models (LLMs) like ChatGPT or Gemini. Small and Open Source LLMs, such as Llama3.1:7B or Gemma2:2B, can be run locally with Ollama to achieve the same results while maintaining user privacy. However, there is currently no simple User Interface (UI) for running Ollama, so that I created this script that provides a simple web interface for such tasks.
 
-JAIFO is an open-source, locally-run interface for using small-scale Large Language Models (LLMs) like Llama3.1 and Gemma2 with Ollama. This script provides a simple web interface for such tasks.
+JAIFO is an open-source, locally-run interface for using small-scale Large Language Models (LLMs) like Llama3.1 and Gemma2 with Ollama. 
 
 ## Key Features
 - Simple and lightweight web interface
 - Ability to create, edit, and delete prompts as presets for easy reuse
 - Ability to create, edit, and delete writing styles for reuse
 ### Use Cases
-- Quickly generate a follow-up email by copying the original into the input prompt text area, selecting a preset prompt ("Follow up email"), choosing an LLM model (default: Llama3.1), and clicking "Write Now"
-- Improve a text by typing a few ideas and selecting the "Writing" preset, then clicking "Write Now" to get a corrected version
+- Quickly generate a follow-up email by copying the original into the input prompt text area, selecting a preset prompt ("Follow up email"), choosing an LLM model (default: Llama3.1), and clicking "Write Now".  AI can create a complete email addressing all relevant follow-up points, tailored to your writing style.
+- Writing text by typing a few ideas and selecting the "Writing" preset, then clicking "Write Now" to get a corrected version (like I'm writing this README :D)
 
 ## Installation
 ### Requirements
