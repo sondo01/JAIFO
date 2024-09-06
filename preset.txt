@@ -1,4 +1,4 @@
 {
-    "New email": "You will use the information in _INPUT_ section to write a new email. Use Markdown for text format.",
+    "New email": "You will use the information in the next section to write a new email. Use Markdown for text format.",
     "Follow up email": "Draft a response to the attached email, ensuring all points are covered. Use Markdown for text format.",
 }
