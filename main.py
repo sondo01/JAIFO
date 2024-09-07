@@ -36,7 +36,7 @@ def call_ollama_generate_text(model, prompt):
     response.raise_for_status()
     return ''.join(json.loads(line).get('response', '') for line in response.iter_lines())
 # Call Ollama API for chat
-def call_ollama_chat(model, prompt):
+def call_ollama_chat(model, prompt, preset_choice):
     messages = [{"role": "user", "content": prompt}]
     response = requests.post(
         f'{OLLAMA_API_URL}/chat',
@@ -53,16 +53,17 @@ def call_ollama_chat(model, prompt):
         if not body.get("done", False):
             message = body.get("message", "")
             content = body.get("message", {}).get("content", "")
-            output += content
+            if preset_choice == "Chat":
+                output += content
         if body.get("done", False):
             message["content"] = output
             return output
 # General function to call Ollama based on model type
-def call_ollama(model, prompt):
-    return call_ollama_generate_text(model, prompt) if "llama" in model.lower() else call_ollama_chat(model, prompt)
+def call_ollama(model, prompt, preset_choice):
+    return call_ollama_generate_text(model, prompt, preset_choice) if "llama" in model.lower() else call_ollama_chat(model, prompt, preset_choice)
 # Append preset/system prompt to the input prompt
 def append_prompts(preset_prompt, input_prompt):
-    return f"{preset_prompt}\n_INPUT_: \n {input_prompt}" if preset_prompt else f"_INPUT_: \n {input_prompt}"
+    return f"{preset_prompt}: {input_prompt}" if preset_prompt else f"{input_prompt}"
 # Fetch model names from the Ollama API
 def fetch_model_names():
     try:
@@ -77,7 +78,7 @@ def fetch_model_names():
 st.title("Ollama Interaction GUI")
 # Initialize session state for preset and style management
 if 'preset_choice' not in st.session_state:
-    st.session_state.preset_choice = "None"
+    st.session_state.preset_choice = "Chat"
 if 'style_choice' not in st.session_state:
     st.session_state.style_choice = "None"
 if 'new_style_active' not in st.session_state:
@@ -123,7 +124,7 @@ if st.button("Write Now!"):
         final_style_prompt = "Use a neutral Australian tone for writing."
 
     final_prompt = append_prompts(f"{final_style_prompt} {preset_prompt}", input_prompt)
-    result = call_ollama(selected_model, final_prompt)
+    result = call_ollama(selected_model, final_prompt, preset_choice)
     st.markdown(f'<div style="height: 400px; overflow-y: auto;background-color:#2e2d2a;">{result}</div>', unsafe_allow_html=True)
 # New and Edit preset and style buttons
 col1, col2, col3, col4 = st.columns(4)
