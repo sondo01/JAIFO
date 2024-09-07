@@ -7,7 +7,7 @@ Simple tasks such as writing emails, translation, or generating documents (like 
 JAIFO is an open-source, locally-run interface for using small-scale Large Language Models (LLMs) like Llama3.1 and Gemma2 with Ollama. 
 
 ## Key Features
-- Simple and lightweight web interface
+- Simple and lightweight web interface for Ollama. 
 - Ability to create, edit, and delete prompts as presets for easy reuse
 - Ability to create, edit, and delete writing styles for reuse
 ### Use Cases
