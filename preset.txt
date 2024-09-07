@@ -1,5 +1,6 @@
 {
     "New email": "Please use the information in the next section to write a new email.",
+    "Reply an Email": "Use the following information to write an email to reply the original one.",
     "Follow up email": "Draft a response to the attached email, ensuring all points are covered.",
     "Writing": "Improve the text after  by correct its grammar and structure. Write with technical documents style. Use Markdown for text format.",
     "Translate into Vietnamese": "Please translate into Vietnamese the following text. Use Markdown for text format. Show only the generated text."
