@@ -101,7 +101,7 @@ def monitor_file(file_path, session_key):
 monitor_file(PRESET_FILE, 'last_modified_preset')
 monitor_file(STYLE_FILE, 'last_modified_style')
 # Preset and model selection
-preset_options = ["None"] + list(st.session_state.get('saved_last_modified_preset', {}).keys())
+preset_options = ["Chat"] + list(st.session_state.get('saved_last_modified_preset', {}).keys())
 preset_choice = st.selectbox("Choose a preset prompt", options=preset_options, index=preset_options.index(st.session_state.preset_choice) if st.session_state.preset_choice in preset_options else 0)
 
 style_options = ["None"] + list(st.session_state.get('saved_last_modified_style', {}).keys())
@@ -164,7 +164,7 @@ if st.session_state.new_preset_active:
         st.session_state.new_preset_active = False
         st.experimental_rerun()
 # Edit preset prompt
-if st.session_state.edit_preset_active and st.session_state.preset_choice != "None":
+if st.session_state.edit_preset_active and st.session_state.preset_choice != "Chat":
     st.write(f"Current preset: {st.session_state.preset_choice}")
     edited_preset_prompt = st.text_area("Edit Preset Prompt", preset_prompt)
     col1, col2 = st.columns(2)
@@ -190,7 +190,7 @@ if st.session_state.edit_preset_active and st.session_state.preset_choice != "No
             del saved_presets[st.session_state.preset_choice]
             save_items(PRESET_FILE, saved_presets)
             st.session_state.saved_last_modified_preset = saved_presets
-            st.session_state.preset_choice = "None"
+            st.session_state.preset_choice = "Chat"
             st.success("Preset deleted successfully.")
             time.sleep(1)
             st.session_state.edit_preset_active = False
