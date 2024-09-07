@@ -27,7 +27,7 @@ def save_items(file_path, items):
         st.error(f"Error saving items to {file_path}: {e}")
 
 # Call Ollama API to generate text
-def call_ollama_generate_text(model, prompt):
+def call_ollama_generate_text(model, prompt, preset_choice):
     response = requests.post(
         f'{OLLAMA_API_URL}/generate',
         json={'model': model, 'prompt': prompt, "options": {"num_ctx": INPUT_LENGTH}},
